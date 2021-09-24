@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: monospace, 'Courier New', Courier;
+}
+
+.box_btn {
+  padding: 5px 10px;
+  border: 1px solid black;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.box.scnd {
+  margin-left: 25px;
+}
+
+.box.thrd {
+  margin-left: 50px;
+}
+/*# sourceMappingURL=style.css.map */

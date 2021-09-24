@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyboardGame</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body onkeydown="myFunction(event)">
+  <div class="box frst">
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="81">q</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="87">w</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="69">e</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="82">r</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="84">t</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="89">y</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="85">u</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="73">i</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="79">o</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="82">p</button>
+  </div>
+  <div class="box scnd">
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="65">a</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="83">s</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="68">d</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="70">f</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="71">g</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="72">h</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="74">j</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="75">k</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="76">l</button>
+  </div>
+  <div class="box thrd">
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="90">z</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="88">x</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="67">c</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="86">v</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="66">b</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="78">n</button>
+    <button class="box_btn" onkeydown="myFunction(event, value)" value="77">m</button>
+  </div>
+
+</body>
+
+</html>
+<script>
+  function myFunction(event, value) {
+  var x = event.keyCode;
+  console.log("tecla de número", x , "pressionada");
+  // console.log(value);
+
+
+  let btns = document.getElementsByClassName("box_btn")
+  let teste = Math.floor(Math.random() * 78) + 1;
+  console.log("valor da tecla", x);
+  console.log("numero aleatório", teste);
+  console.log("value do botão", btns[x].value);
+
+
+}
+</script>
