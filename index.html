@@ -9,77 +9,117 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body onkeydown="keyboard(event)">
+<body onkeydown="keyboard(event)" id="resp">
   <div class="box frst">
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="81">q</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="87">w</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="69">e</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="82">r</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="84">t</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="89">y</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="85">u</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="73">i</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="79">o</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="80">p</button>
+    <button class="box_btn" id="q" value="81">q</button>
+    <button class="box_btn" id="w" value="87">w</button>
+    <button class="box_btn" id="e" value="69">e</button>
+    <button class="box_btn" id="r" value="82">r</button>
+    <button class="box_btn" id="t" value="84">t</button>
+    <button class="box_btn" id="y" value="89">y</button>
+    <button class="box_btn" id="u" value="85">u</button>
+    <button class="box_btn" id="i" value="73">i</button>
+    <button class="box_btn" id="o" value="79">o</button>
+    <button class="box_btn" id="p" value="80">p</button>
   </div>
   <div class="box scnd">
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="65">a</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="83">s</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="68">d</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="70">f</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="71">g</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="72">h</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="74">j</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="75">k</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="76">l</button>
+    <button class="box_btn" id="a" value="65">a</button>
+    <button class="box_btn" id="s" value="83">s</button>
+    <button class="box_btn" id="d" value="68">d</button>
+    <button class="box_btn" id="f" value="70">f</button>
+    <button class="box_btn" id="g" value="71">g</button>
+    <button class="box_btn" id="h" value="72">h</button>
+    <button class="box_btn" id="j" value="74">j</button>
+    <button class="box_btn" id="k" value="75">k</button>
+    <button class="box_btn" id="l" value="76">l</button>
   </div>
   <div class="box thrd">
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="90">z</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="88">x</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="67">c</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="86">v</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="66">b</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="78">n</button>
-    <button class="box_btn" onkeydown="myFunction(event, value)" value="77">m</button>
+    <button class="box_btn" id="z" value="90">z</button>
+    <button class="box_btn" id="x" value="88">x</button>
+    <button class="box_btn" id="c" value="67">c</button>
+    <button class="box_btn" id="v" value="86">v</button>
+    <button class="box_btn" id="b" value="66">b</button>
+    <button class="box_btn" id="n" value="78">n</button>
+    <button class="box_btn" id="m" value="77">m</button>
   </div>
 
 </body>
 
 </html>
 <script>
-  function keyboard(event, value) {
-    var x = event.keyCode;
-    let keys = [81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 65, 83, 68, 70, 71, 72, 74, 75, 76, 90, 88, 67, 86, 66, 78, 77]
+  function keyboard(event, value){
+    let keyCodeArr = [81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 65, 83, 68, 70, 71, 72, 74, 75, 76, 90, 88, 67, 86, 66, 78, 77]
+    let keyCharArr = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
 
     let btns = document.getElementsByClassName("box_btn")
-    let teste = Math.floor(Math.random() * keys.length-1);
-    console.log("numero aleatorio", teste);
-    console.log("id tecla do array",keys[teste]);
-    console.log("valor da tecla", x);
-    console.log(keys);
+    let random = Math.floor(Math.random() * keyCodeArr.length-1);
 
-
-
-
-
-
-  for (let i = 0; i < btns.length; i++) {
-    const element = btns[i];
-    if (element.value == x) {
-      console.log("value do botão",element.value);
-      element.style.background = "red"
-    }else{
-      element.style.background = "white"
+    let teste
+    for (let i = 0; i < btns.length; i++) {
+      const element = btns[i];
+      if (element.innerHTML == keyCharArr[random]) {
+        element.style.background = "red"
+        teste = element
+        console.log("tecla pintada",element.value);
+      }
     }
 
 
+
+    
+    // var keyCode = event.keyCode;
+    // // console.log(keyCode);
+
+    // if (keyCode == teste.value) {
+    //   console.log("deu certo caralhooooooooooooo");
+    // }
+
+
+
+    // let keys = [81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 65, 83, 68, 70, 71, 72, 74, 75, 76, 90, 88, 67, 86, 66, 78, 77]
+    
+
+
+
+
+
+
+
+
+    
+    // console.log("numero aleatorio", teste);
+    // console.log("id tecla do array",keys[teste]);
+    // console.log("valor da tecla", x);
+    // console.log(keys);
+    // console.log(keys);
+
+    // keys[teste].style.background = "red"
+
+
+
+  // for (let i = 0; i < btns.length; i++) {
+  //   const element = btns[i];
+
+
+  //   if (element.value == x) {
+  //     console.log("value do botão",element.value);
+  //     element.style.background = "red"
+  //   }else{
+  //     element.style.background = "white"
+  //   }
+
+
+  // }
+
+
+
+
+
+
+
+
   }
-
-
-
-
-
-}
+  
 
 window.onload = keyboard();
 </script>
